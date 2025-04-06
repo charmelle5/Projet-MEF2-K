@@ -8,5 +8,5 @@ void creation_animaux(){
   scanf("%d",&a.annee);
   printf("Saisir le poids de l'animal :/n");
   scanf("%f", &a.poids);
-  //commentaire ?//
+  //commentaire ???//
 }
