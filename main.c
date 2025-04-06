@@ -3,8 +3,10 @@
 #include<Animal.h>
 
 int n;
-printf("Saisir le nombre d'animaux dans le chenil :\n");
-scanf("%d",&n);
+do{
+  printf("Saisir le nombre d'animaux dans le chenil :\n");
+  scanf("%d",&n);
+}while(n>50 || n<0);
 
 Animal* chenil = malloc(n*sizeof(Animal));
 
