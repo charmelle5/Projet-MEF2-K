@@ -3,7 +3,7 @@ typedef enum{
 }Type;
 
 typedef struct{
-  int num:
+  int num;
   char nom[50];
   Type espece;
   float poids;
