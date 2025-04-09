@@ -4,7 +4,7 @@ typedef enum{
 
 typedef struct{
   int num;
-  char nom[50];
+  char nom[MAXCHAR];
   Type espece;
   float poids;
   int annee;
