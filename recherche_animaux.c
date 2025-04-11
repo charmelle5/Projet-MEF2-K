@@ -1,1 +1,2 @@
-void Rechercher_animal(
+void Rechercher_animal(Animal* chenil1, int taille){
+  
