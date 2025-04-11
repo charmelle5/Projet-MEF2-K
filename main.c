@@ -12,6 +12,13 @@ int main() {
   }
 
   Animal* chenil = malloc(SIZE*sizeof(Animal));
+  FILE* fichier = NULL;
+  fichier = fopen(" Animaux_Chenil.txt", "r+");
+  if (fichier == NULL){
+    printf("Ouverture du fichier impossible\n"); 
+    exit(1);
+  }
+  fclose(fichier);
   
   int numero;
   printf("Quelle action voulez-vous réaliser ? 1.Rechercher un/des animaux\n 2.Ajouter un animal qui vous a été confié \n3.Adoption d’un animal");
