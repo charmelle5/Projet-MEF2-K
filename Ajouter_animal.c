@@ -1,3 +1,6 @@
+#include<stdio.h>
+#include<stdlib.h>
+
 void Ajouter_animal(Animal* chenil, int taille){
   if(chenil == NULL|| taille<0){
     printf("Erreur !");
@@ -14,3 +17,4 @@ void Ajouter_animal(Animal* chenil, int taille){
     }
     Newchenil[taille+1] = creation_animaux();
     Newchenil[taille+1].num = rand()%100;
+  }
