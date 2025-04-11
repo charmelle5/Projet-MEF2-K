@@ -1,5 +1,7 @@
 void creation_animaux(){
   Animal a;
+  printf("Saisir le numero d'identification :\n");
+  scanf("%d",&a.num);
   printf("Saisir le nom de l'animal :\n");
   scanf("%s",a.nom);
   printf("Saisir l'espece de l'animal :\n");
