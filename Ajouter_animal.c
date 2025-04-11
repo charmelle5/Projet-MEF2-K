@@ -4,7 +4,7 @@ void Ajouter_animal(Animal* chenil, int taille){
     exit(1);
   }
   if(taille==50){
-    printf("Le chenil est plein, nous ne pouvons pas acceuillir un nouveau animal ");
+    printf("Le chenil est plein, nous ne pouvons pas acceuillir un nouvel animal ");
   }
   else{
     Animal* Newchenil = malloc((taille+1)*sizeof(Animal));
