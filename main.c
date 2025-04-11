@@ -20,6 +20,22 @@ int main() {
   char* nom= " Cacahuete ";
   fputs(nom,fichier);
   fclose(fichier);
+
+FILE *fichier = fopen("fichier.txt", "w");  // "w" = écriture (crée/écrase)
+    
+    if (fichier == NULL) {
+        printf("Erreur : impossible d'ouvrir le fichier.\n");
+        return 1;
+    }
+
+    // Écrire dans le fichier
+    fprintf(fichier, "Bonjour GitHub !\n");
+    fprintf(fichier, "Ligne 2.\n");
+
+    fclose(fichier);  // Fermer le fichier
+    printf("Écriture terminée.\n");
+
+    
   
   int numero;
   printf("Quelle action voulez-vous réaliser ? 1.Rechercher un/des animaux\n 2.Ajouter un animal qui vous a été confié \n3.Adoption d’un animal");
