@@ -2,6 +2,7 @@
 #include<stdlib.h>
 #include<Animal.h>
 #define MAXCHAR 50
+#define SIZE 50
 
 int main() {
   int n;
@@ -10,11 +11,8 @@ int main() {
     scanf("%d",&n);
   }
 
-  Animal* chenil = malloc(n*sizeof(Animal));
-
-  for (int i=0; i<n; i++){
-    creation_animaux();
-  }
+  Animal* chenil = malloc(SIZE*sizeof(Animal));
+  
   int numero;
   printf("Quelle action voulez-vous réaliser ? 1.Rechercher un/des animaux\n 2.Ajouter un animal qui vous a été confié \n3.Adoption d’un animal");
   scanf("%d",&numero);
