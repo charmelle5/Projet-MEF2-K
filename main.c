@@ -17,7 +17,7 @@ int main() {
   if (fichier == NULL){
     printf("Ouverture du fichier impossible\n"); 
     exit(1);
-  }
+  fputs("je suis dans le fichier", fichier);
   fclose(fichier);
   
   int numero;
