@@ -1,2 +1,2 @@
 # Projet-MEF2-K
-<img src="./chenyl.png" alt="chenyl" width="250"/>
+<img src="./chenyl.png" alt="chenyl" width="300"/>
