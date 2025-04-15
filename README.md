@@ -1,4 +1,3 @@
 # Projet-MEF2-K
 ![Chenyl](https://github.com/charmelle5/chenyl.png)
-![photo projet](https://github.com/celiast05/Projet/blob/main/image.img)
 ![chenyl](https://github.com/charmelle5/Projet/raw/main/chenyl.png)
