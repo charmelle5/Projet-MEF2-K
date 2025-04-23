@@ -1,24 +1,64 @@
-void Rechercher_animal(Animal* chenil1, int SIZE){
-   if(chenil == NULL){
-    printf("Erreur !");
-    exit(1);
-  }
-char* nom; 
-int espece;
-printf("Taper le nom de l'animal :" \n)
-scanf("%s",&nom);
-printf("Taper l'espèce de l'animal : 1:Chien\n 2:Chat\n 3:Hamster\n 4:Autruche\n 5:Lapin\n 6:Poisson\n");
-scanf("%d",&espece);
-if(espece<1 || espece>6){
-   printf("Erreur");
-   printf("Saisir une numéro : 1:Chien\n 2:Chat\n 3:Hamster\n 4:Autruche\n 5:Lapin\n 6:Poisson\n");
-   scanf("%d",&espece);
+void Rechercher_animal(Animal* chenil1, int taille){
+
+   if (taille == 0) {
+        printf("Aucun animal dans le chenil.\n");
+        return;
+    }
+   int choix
+   int espece
+   int age_critere
+   int annee_actuelle = 2025;
+   char nom_recherche[MAXCHAR];
+
+   printf("\n=== CRITERES DE RECHERCHE ===\n");
+   printf("1. Par nom\n");
+   printf("2. Par espece\n");
+   printf("3. Par age (jeune <2 ans, senior >10 ans)\n");
+   printf("Votre choix : ");
+   scanf("%d", &choix);
+   getchar();
+
+   printf("\n=== RESULTATS DE LA RECHERCHE ===\n");
+    int trouve = 0;
+
+    for (int i = 0; i < taille; i++) {
+        Animal a = chenil[i];
+        int match = 0;
+
+        switch(choix) {
+            case 1:
+                printf("Entrez le nom a rechercher : ");
+                fgets(nom_recherche, MAXCHAR, stdin);
+                nom_recherche[strcspn(nom_recherche, "\n")] = '\0';
+                if (strstr(a.nom, nom_recherche)) {
+                   match = 1;
+                }
+                break;
+            case 2:
+                printf("Entrez l'espece (1:Chien, 2:Chat, etc.) : ");
+                scanf("%d", &espece);
+                if (a.espece == espece){
+                   match = 1;
+                }
+                break;
+            case 3:
+                printf("Rechercher jeune (1) ou senior (2) : ");
+                scanf("%d", &age_critere);
+                int age = annee_actuelle - a.annee;
+                if ((age_critere == 1 && age < 2) || (age_critere == 2 && age > 10)){
+                   match = 1;
+                }
+                break;
+        }
+         if (match) {
+            afficher_animal(a);
+            trouve = 1;
+        }
+    }
+   if (!trouve) {
+        printf("Aucun animal ne correspond aux criteres de recherche.\n");
+    }
 }
-printf("Taper l'age de l'animal :" \n)
-scanf("%d",nom);
-for(int i=0; i<SIZE;i++){
-   if( strcmp(nom)!=strcmp(chenil1[i].nom && espece != chenil1[i].espece ){
-      
-   }
+
 
 
