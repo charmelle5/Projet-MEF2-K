@@ -2,8 +2,7 @@ void creation_animaux(){
   Animal a;
   char temp_comment[MAXCOM];
   
-  printf("Saisir le numero d'identification :\n");
-  scanf("%d",&a.num);
+  a.num = rand() % 9000 + 1000; // Entre 1000 et 9999
   
   printf("Saisir le nom de l'animal :\n");
   scanf("%49s",a.nom); // Limité à 49 caractères pour éviter le débordement
@@ -16,6 +15,7 @@ void creation_animaux(){
         printf("1:Chien\n2:Chat\n3:Hamster\n4:Autruche\n5:Lapin\n6:Poisson\n");
         scanf("%d", (int*)&a.espece);
   }
+  getchar(); // Nettoyer le buffer
   
   printf("Saisir l'annee de naissance :\n");
   scanf("%d",&a.annee);
