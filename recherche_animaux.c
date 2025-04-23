@@ -1,4 +1,4 @@
-void Rechercher_animal(Animal* chenil1, int taille){
+void Rechercher_animal(Animal* chenil, int taille){
 
    if (taille == 0) {
         printf("Aucun animal dans le chenil.\n");
