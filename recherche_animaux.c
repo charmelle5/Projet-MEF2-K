@@ -4,9 +4,9 @@ void Rechercher_animal(Animal* chenil1, int taille){
         printf("Aucun animal dans le chenil.\n");
         return;
     }
-   int choix
-   int espece
-   int age_critere
+   int choix;
+   int espece;
+   int age_critere;
    int annee_actuelle = 2025;
    char nom_recherche[MAXCHAR];
 
