@@ -5,11 +5,6 @@
 #define SIZE 50
 
 int main() {
-  int n;
-  while(n>50 || n<0){
-    printf("Saisir le nombre d'animaux dans le chenil :\n");
-    scanf("%d",&n);
-  }
 
   Animal* chenil = malloc(SIZE*sizeof(Animal));
   FILE* fichier = NULL;
