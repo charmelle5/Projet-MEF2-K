@@ -37,9 +37,35 @@ FILE *fichier = fopen("fichier.txt", "w");  // "w" = écriture (crée/écrase)
 
     
   
-  int numero;
-  printf("Quelle action voulez-vous réaliser ? 1.Rechercher un/des animaux\n 2.Ajouter un animal qui vous a été confié \n3.Adoption d’un animal");
-  scanf("%d",&numero);
+  int choix;
+    do{
+      printf("\n=== MENU PRINCIPAL ===\n");
+      printf("1. Rechercher un/des animaux\n");
+      printf("2. Ajouter un animal\n");
+      printf("3. Adopter un animal\n");
+      printf("4. Quitter\n");
+      printf("Votre choix : ");
+      scanf("%d",&choix);
+      getchar(); // Pour consommer le '\n'
+
+      switch(choix) {
+            case 1:
+                rechercher_animaux();
+                break;
+            case 2:
+                ajouter_animal();
+                break;
+            case 3:
+                adopter_animal();
+                break;
+            case 4:
+                printf("Au revoir !\n");
+                break;
+            default:
+                printf("Choix invalide. Veuillez réessayer.\n");
+        }
+    } while(choix != 4);
+  
 
   switch (numero)
     {
