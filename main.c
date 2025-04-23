@@ -2,6 +2,7 @@
 #include<stdlib.h>
 #include<Animal.h>
 #define MAXCHAR 50
+#define MAXCOM 50
 #define SIZE 50
 
 int main() {
