@@ -8,5 +8,5 @@ typedef struct{
   Type espece;
   float poids;
   int annee;
-  char* commentaire[MAXCOM];
+  char commentaire[MAXCOM];
 }Animal;
