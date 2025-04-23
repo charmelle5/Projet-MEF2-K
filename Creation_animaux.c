@@ -28,10 +28,11 @@ void creation_animaux(){
   fgets(temp_comment, MAXCOM, stdin);
   temp_comment[strcspn(temp_comment, "\n")] = '\0'; // Supprimer le saut de ligne
     
-  if(strlen(temp_comment) > 0) {
-      strncpy(a.commentaire, temp_comment, MAXCOM-1);
-      a.commentaire[MAXCOM-1] = '\0'; // Assurance null-terminated
-  } else {
-      a.commentaire[0] = '\0'; // Commentaire vide si non fourni
-  }
+  if(strlen(temp_comment)) {
+        strncpy(a.commentaire, temp_comment, MAXCOM-1);
+        a.commentaire[MAXCOM-1] = '\0';
+    } else {
+        a.commentaire[0] = '\0';
+    }
+  return a;
 }
