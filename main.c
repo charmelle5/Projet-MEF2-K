@@ -66,19 +66,5 @@ FILE *fichier = fopen("fichier.txt", "w");  // "w" = écriture (crée/écrase)
         }
     } while(choix != 4);
   
-
-  switch (numero)
-    {
-    case 1:
-        return recherche_animaux();
-    case 2:
-        return Ajouter_animal();
-    case 3:
-        return Adoption_animal();
-    default:
-        return 
-          printf("Quelle action voulez-vous réaliser ? 1.Rechercher un/des animaux\n 2.Ajouter un animal qui vous a été confié \n3.Adoption d’un animal");
-          scanf("%d",&numero);
-    }
   
 }
