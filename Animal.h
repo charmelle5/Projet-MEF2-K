@@ -11,6 +11,7 @@ typedef struct{
   char commentaire[MAXCOM];
 }Animal;
 
-void creation_animaux()
-void Ajouter_animal(Animal** chenil, int* taille)
-void Rechercher_animal(Animal* chenil, int taille)
+void creation_animaux();
+void Ajouter_animal(Animal** chenil, int* taille);
+void Rechercher_animal(Animal* chenil, int taille);
+void Afficher_animal(Aniaml a);
