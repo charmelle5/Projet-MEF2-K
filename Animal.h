@@ -10,3 +10,5 @@ typedef struct{
   int annee;
   char commentaire[MAXCOM];
 }Animal;
+
+void 
