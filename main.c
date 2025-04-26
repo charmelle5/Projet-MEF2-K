@@ -13,7 +13,6 @@ int main() {
   if (fichier == NULL){
     printf("Ouverture du fichier impossible\n"); 
     exit(1);
-  char* nom= " Cacahuete ";
   fputs(nom,fichier);
   fclose(fichier);
 
