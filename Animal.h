@@ -12,3 +12,4 @@ typedef struct{
 }Animal;
 
 void creation_animaux()
+void Ajouter_animal(Animal** chenil, int* taille)
