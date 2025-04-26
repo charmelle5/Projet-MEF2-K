@@ -1,6 +1,6 @@
 void sauvegarder_chenil(Animal* chenil, int taille){
-
-  // Sauvegarde dans un fichier binaire //
+  
+  // Sauvegarde dans un fichier binaire les animaux à la fin du programme //
   FILE* fichier = fopen("Animaux_Chenil.dat", "wb");
     if (fichier == NULL) {
         printf("Erreur lors de la sauvegarde.\n");
