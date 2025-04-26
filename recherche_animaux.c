@@ -6,7 +6,7 @@ void Rechercher_animal(Animal* chenil, int taille){
     }
    int choix;
    int espece;
-   int age_critere;
+   int type_age;
    int annee_actuelle = 2025;
    char nom_recherche[MAXCHAR];
 
@@ -43,9 +43,9 @@ void Rechercher_animal(Animal* chenil, int taille){
                 break;
             case 3:
                 printf("Rechercher jeune (1) ou senior (2) : ");
-                scanf("%d", &age_critere);
+                scanf("%d", &type_age);
                 int age = annee_actuelle - a.annee;
-                if ((age_critere == 1 && age < 2) || (age_critere == 2 && age > 10)){
+                if ((type_age == 1 && age < 2) || (type_age == 2 && age > 10)){
                    match = 1;
                 }
                 break;
@@ -55,7 +55,7 @@ void Rechercher_animal(Animal* chenil, int taille){
             trouve = 1;
         }
     }
-   if (!trouve) {
+   if (trouve != 1) {
         printf("Aucun animal ne correspond aux criteres de recherche.\n");
     }
 }
