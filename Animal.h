@@ -1,5 +1,5 @@
 typedef enum{
-  CHIEN=1, CHAT, HAMSTER, AUTRUCHE, LAPIN
+  CHIEN=1, CHAT, HAMSTER, AUTRUCHE, LAPIN, POISSON
 }Type;
 
 typedef struct{
