@@ -11,4 +11,4 @@ typedef struct{
   char commentaire[MAXCOM];
 }Animal;
 
-void 
+void creation_animaux()
