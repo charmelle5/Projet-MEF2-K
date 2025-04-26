@@ -9,10 +9,6 @@ void Ajouter_animal(Animal** chenil, int* taille){
 
   Animal nouvel_animal = creation_animal();
 
-  if(chenil == NULL){
-    printf("Erreur !");
-    exit(1);
-  }
   // Réallocation mémoire pour agrandir le tableau
   Animal* Newchenil = realloc(*chenil, (*taille + 1) * sizeof(Animal));
   if (Newchenil == NULL) {
