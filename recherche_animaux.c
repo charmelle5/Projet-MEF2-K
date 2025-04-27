@@ -20,7 +20,7 @@ void rechercher_animal(Animal* chenil, int taille) {
 
 	printf("\n=== RESULTATS DE LA RECHERCHE ===\n");
 	int trouve = 0;
-	int resultats[MAX_ANIMAUX]; // Stocke les indices des animaux trouvC)s
+	int resultats[MAX_ANIMAUX]; // Stocke les indices des animaux trouvés
 	int nb_resultats = 0;
 	
 	// Préparation des critères de recherche pour la comparaison
