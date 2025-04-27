@@ -53,10 +53,10 @@ FILE *fichier = fopen("fichier.txt", "w");  // "w" = écriture (crée/écrase)
                 rechercher_animal();
                 break;
             case 2:
-                ajouter_animal();
+                ajouter_animal(&chenil, &taille);
                 break;
             case 3:
-                adopter_animal();
+                adopter_animal(&chenil, &taille);
                 break;
             case 4:
                 printf("Au revoir !\n");
