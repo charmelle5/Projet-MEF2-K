@@ -13,7 +13,7 @@ void adopter_animal(Animal** chenil, int* taille){
     for (int i = 0; i < *taille; i++) {
         if ((*chenil)[i].num == num) {
             index = i;
-            break;
+            break; // arrêt de la boucle 
         }
     }
 
