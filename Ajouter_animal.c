@@ -7,7 +7,7 @@ void Ajouter_animal(Animal** chenil, int* taille){
         return;
   }
 
-  Animal nouvel_animal = creation_animaux();
+  Animal nouvel_animal = creation_animal();
 
   // Réallocation mémoire pour agrandir le tableau
   Animal* Newchenil = realloc(*chenil, (*taille + 1) * sizeof(Animal));
