@@ -6,6 +6,7 @@ void rechercher_animal(Animal* chenil, int taille) {
 	}
 	int choix;
 	int espece;
+	int age;
 	int type_age;
 	int annee_actuelle = 2025;
 	char nom_recherche[MAXCHAR];
@@ -62,7 +63,7 @@ void rechercher_animal(Animal* chenil, int taille) {
                 }
 			break;
 		case 3:
-			int age = annee_actuelle - a.annee;
+			age = annee_actuelle - a.annee;
                 if ((type_age == 1 && age < 2) || (type_age == 2 && age > 10)) {
                     match = 1;
                 }
