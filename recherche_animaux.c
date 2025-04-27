@@ -1,22 +1,30 @@
 void rechercher_animal(Animal* chenil, int taille) {
 
-	if (taille == 0) {
-		printf("Aucun animal dans le chenil.\n");
-		return;
-	}
+	if (chenil == NULL || taille <= 0) {
+        	printf("Aucun animal dans le chenil.\n");
+        	return;
+    	}
+	
 	int choix;
 	int espece;
 	int age;
 	int type_age;
 	int annee_actuelle = 2025;
 	char nom_recherche[MAXCHAR];
-
+	
 	printf("\n=== CRITERES DE RECHERCHE ===\n");
 	printf("1. Par nom\n");
 	printf("2. Par espece\n");
 	printf("3. Par age (jeune <2 ans, senior >10 ans)\n");
 	printf("Votre choix : ");
-	scanf("%d", &choix);
+	if (scanf("%d", &choix) != 1 || choix < 1 || choix > 3) {
+        	printf("Choix invalide.\nVeuillez refaire votre choix\n");
+		printf("1. Par nom\n");
+		printf("2. Par espece\n");
+		printf("3. Par age (jeune <2 ans, senior >10 ans)\n");
+		printf("Votre choix : ");
+		scanf("%d", &choix);
+   	}	
 	getchar();
 
 	printf("\n=== RESULTATS DE LA RECHERCHE ===\n");
