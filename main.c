@@ -42,7 +42,7 @@ int main() {
               adopter_animal(&chenil, &taille);
               break;
           case 4:
-              affiche_temps_nettoyage(&chenil, taille);
+              affiche_temps_nettoyage(chenil, taille);
               break;
           case 5:
             printf("Au revoir !\n");
