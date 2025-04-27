@@ -22,6 +22,7 @@ void charger_chenil(Animal** chenil, int* taille) {
         fclose(fichier);
         return;
     }
+    // Faire la verification !!!!
     fread(*chenil, sizeof(Animal), *taille, fichier); // Remplit le tableau chenil avec les données binaires du fichier.
     fclose(fichier);
 }
