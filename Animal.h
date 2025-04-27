@@ -13,8 +13,8 @@ typedef struct{
 
 // Prototypes //
 void creation_animaux();
-void Ajouter_animal(Animal** chenil, int* taille);
-void Rechercher_animal(Animal* chenil, int taille);
-void Afficher_animal(Animal a);
+void ajouter_animal(Animal** chenil, int* taille);
+void rechercher_animal(Animal* chenil, int taille);
+void afficher_animal(Animal a);
 void sauvegarder_chenil(Animal* chenil, int taille);
 void charger_chenil(Animal** chenil, int* taille);
