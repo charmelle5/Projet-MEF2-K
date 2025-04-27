@@ -25,7 +25,10 @@ int main() {
     printf("4. Calculer le temps de nettoyage\n");
     printf("5. Quitter\n");
     printf("Votre choix : ");
-    scanf("%d",&choix);
+    if (scanf("%d", &choix) != 1) {
+            printf("Saisie invalide. Veuillez entrer un nombre.\n");
+            exit(1);
+    }
     getchar(); // Pour consommer le '\n'
 
     switch(choix) {
