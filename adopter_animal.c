@@ -1,4 +1,4 @@
-void adopter_animal.c(Animal** chenil, int* taille){
+void adopter_animal(Animal** chenil, int* taille){
     if (*taille == 0) {
         printf("Aucun animal dans le chenil.\n");
         return;
