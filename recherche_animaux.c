@@ -21,10 +21,10 @@ void rechercher_animal(Animal* chenil, int taille) {
 
 	printf("\n=== RESULTATS DE LA RECHERCHE ===\n");
 	int trouve = 0;
-	int resultats[MAX_ANIMAUX]; // Stocke les indices des animaux trouvés
+	int resultats[MAX_ANIMAUX];
 	int nb_resultats = 0;
 	
-	// Préparation des critères de recherche pour la comparaison
+	// Demande à l'utilisateur les critères de recherche pour la comparaison
 	switch(choix) {
         case 1:
             printf("Entrez le nom a rechercher : ");
@@ -71,13 +71,13 @@ void rechercher_animal(Animal* chenil, int taille) {
 		}
 
 		if (match) {
-			resultats[nb_resultats++] = i;
+			resultats[nb_resultats++] = i; // Stocke les indices des animaux trouvés
 		}
 	}
 	
     
 	if (nb_resultats>0) {
-	    // Afficher les animaux correspondants aux critère rechercher
+	    	// Afficher tous les animaux correspondants aux critère rechercher
 		printf("\n=== %d ANIMAUX TROUVES ===\n", nb_resultats);
 		for (int r = 0; r < nb_resultats; r++) {
 			printf("\n--- Animal %d/%d ---\n", r+1, nb_resultats);
@@ -85,20 +85,20 @@ void rechercher_animal(Animal* chenil, int taille) {
 		}
 		
 		// Selectionner l'animal voulu
-        if (nb_resultats > 1) {
-            int selection;
-            printf("\nEntrez le numero de l'animal a selectionner (0 pour annuler) : ");
-            scanf("%d", &selection);
-            getchar();
+        	if (nb_resultats > 1) {
+         		int selection;
+          		printf("\nEntrez le numero de l'animal a selectionner (0 pour annuler) : ");
+      	        	scanf("%d", &selection);
+                   	getchar();
             
-            if (selection > 0 && selection <= nb_resultats) {
-                printf("\n=== ANIMAL SELECTIONNE ===\n");
-                afficher_animal(chenil[resultats[selection-1]]);
-            }
+            	   	if (selection > 0 && selection <= nb_resultats) {
+                		printf("\n=== ANIMAL RECHERCHE ===\n");
+                		afficher_animal(chenil[resultats[selection-1]]);
+            	     	}
+        	}
         }
-	}
 	else {
-		printf("Aucun animal ne correspond aux criteres de recherche.\n");
+	  	printf("Aucun animal ne correspond aux criteres de recherche.\n");
 	}
 
 
