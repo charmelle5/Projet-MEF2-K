@@ -1,5 +1,5 @@
 void adopter_animal(Animal** chenil, int* taille){
-    if (*taille == 0) {
+    if (chenil == NULL || *taille <= 0) {
         printf("Aucun animal dans le chenil.\n");
         return;
     }
@@ -7,7 +7,9 @@ void adopter_animal(Animal** chenil, int* taille){
     int num;
     printf("\n=== ADOPTION D'UN ANIMAL ===\n");
     printf("Entrez le numero d'identification : ");
-    scanf("%d", &num);
+    if (scanf("%d", &num) != 1) {
+        exit(3);
+    }
 
     int index = 0;
     for (int i = 0; i < *taille; i++) {
