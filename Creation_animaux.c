@@ -1,4 +1,4 @@
-void creation_animal(){
+Animal creation_animal(){
   Animal a;
   char temp_comment[MAXCOM];
   
