@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-void Ajouter_animal(Animal** chenil, int* taille){
+void ajouter_animal(Animal** chenil, int* taille){
   if (*taille >= MAX_ANIMAUX) {
         printf("Le chenil est plein (capacité max: %d).\n", MAX_ANIMAUX);
         return;
