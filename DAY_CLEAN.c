@@ -31,7 +31,6 @@ TempsNettoyage temps_nettoyage(Type espece) {
     return temps;
 }
 
-// Fonction qui affiche le temps de nettoyage
 void affiche_temps_nettoyage(Animal* chenil, int taille) {
     if (taille == 0) {
         printf("Aucun animal dans le chenil - nettoyage minimal (2 minutes/jour).\n");
@@ -44,7 +43,8 @@ void affiche_temps_nettoyage(Animal* chenil, int taille) {
 
     // Temps nettoyage pour les cages vides
     total_quotidien += cages_vides * 2;
-    
+
+    // Calcule et affiche le temps de nettoyage de chaques animaux
     printf("\n=== TEMPS DE NETTOYAGE ===\n");
     for (int i = 0; i < taille; i++) {
         TempsNettoyage t = temps_nettoyage(chenil[i].espece);
@@ -56,6 +56,7 @@ void affiche_temps_nettoyage(Animal* chenil, int taille) {
         total_hebdomadaire += t.temps_hebdomadaire;
     }
 
+    // Affiche le temps total de nettoyage pour le chenil 
     printf("\n---Temps de nettoyage total---\n");
     printf("Temps quotidien total : %d minutes\n", total_quotidien);
     printf("Temps hebdomadaire supplementaire : %d minutes\n", total_hebdomadaire);
