@@ -50,7 +50,7 @@ FILE *fichier = fopen("fichier.txt", "w");  // "w" = écriture (crée/écrase)
 
       switch(choix) {
             case 1:
-                rechercher_animal();
+                rechercher_animal(chenil, taille);
                 break;
             case 2:
                 ajouter_animal(&chenil, &taille);
