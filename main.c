@@ -22,7 +22,8 @@ int main() {
     printf("1. Rechercher un/des animaux\n");
     printf("2. Ajouter un animal\n");
     printf("3. Adopter un animal\n");
-    printf("4. Quitter\n");
+    printf("4. Calculer le temps de nettoyage\n");
+    printf("5. Quitter\n");
     printf("Votre choix : ");
     scanf("%d",&choix);
     getchar(); // Pour consommer le '\n'
@@ -34,16 +35,19 @@ int main() {
           case 2:
               ajouter_animal(&chenil, &taille);
               break;
-           case 3:
+          case 3:
               adopter_animal(&chenil, &taille);
               break;
           case 4:
+              calculer_temps_nettoyage(&chenil, &taille);
+              break;
+          case 5:
             printf("Au revoir !\n");
                break;
           default:
               printf("Choix invalide. Veuillez réessayer.\n");
     }
-  } while(choix != 4);
+  } while(choix != 5);
 
   // Sauvegarder avant de quitter //
   sauvegarder_chenil(chenil, taille);
