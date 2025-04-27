@@ -1,5 +1,5 @@
 void charger_chenil(Animal** chenil, int* taille) {
-    // Actualisation du tableau chenil en lisant le ficher //
+    // Actualisation du tableau chenil en lisant le ficher
     FILE* fichier = fopen("Animaux_Chenil.dat", "rb");
     if (fichier == NULL) {
         return; // Fichier inexistant (normal au premier lancement)
