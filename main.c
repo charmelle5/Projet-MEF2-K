@@ -5,7 +5,7 @@
 #include<Animal.h>
 
 #define MAXCHAR 50
-#define MAXCOM 50
+#define MAXCOM 200
 #define MAX_ANIMAUX 50
 
 int main() {
