@@ -19,7 +19,11 @@ TempsNettoyage temps_nettoyage(Type espece) {
             temps.temps_hebdomadaire = 45;
             break;
         case LAPIN:
+            temps.temps_quotidien = 10;
+            temps.temps_hebdomadaire = 30;
         case POISSON:
+            temps.temps_quotidien = 5;
+            temps.temps_hebdomadaire = 15;
         default:
             temps.temps_quotidien = 2;
             temps.temps_hebdomadaire = 0;
@@ -41,18 +45,17 @@ void calculer_temps_nettoyage(Animal* chenil, int taille) {
     // Ajout temps pour les cages vides
     total_quotidien += cages_vides * 2;
 
-    // Temps pour les animaux
+    // Temps nettoyage pour les animaux du chenil
     for (int i = 0; i < taille; i++) {
         TempsNettoyage t = temps_nettoyage(chenil[i].espece);
         total_quotidien += t.temps_quotidien;
         total_hebdomadaire += t.temps_hebdomadaire;
     }
 
-    // Affichage des résultats
+    // Affichage temps de nettoyage
     printf("\n=== TEMPS DE NETTOYAGE ===\n");
-    printf("Temps quotidien total : %d minutes\n", total_quotidien);
-    printf("Temps hebdomadaire supplementaire : %d minutes\n", total_hebdomadaire);
-    printf("Total semaine : %d minutes\n", 
-           (total_quotidien * 7) + total_hebdomadaire);
+    printf("Temps quotidien total : %d min\n", total_quotidien);
+    printf("Temps hebdomadaire supplementaire : %d min\n", total_hebdomadaire);
+    printf("Total semaine : %d min\n", (total_quotidien * 7) + total_hebdomadaire);
 }
 
