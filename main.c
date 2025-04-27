@@ -1,13 +1,17 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
 #include<Animal.h>
+
 #define MAXCHAR 50
 #define MAXCOM 50
-#define SIZE 50
+#define MAX_ANIMAUX 50
 
 int main() {
 
-  Animal* chenil = malloc(SIZE*sizeof(Animal));
+  Animal* chenil = NULL;
+  int taille = 0;
   FILE* fichier = NULL;
   fichier = fopen(" Animaux_Chenil.txt", "r+");
   if (fichier == NULL){
@@ -31,7 +35,8 @@ FILE *fichier = fopen("fichier.txt", "w");  // "w" = écriture (crée/écrase)
     printf("Écriture terminée.\n");
 
     
-  
+  Animal* chenil = NULL;
+  int taille = 0;
   int choix;
     do{
       printf("\n=== MENU PRINCIPAL ===\n");
