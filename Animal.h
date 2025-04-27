@@ -24,5 +24,5 @@ void rechercher_animal(Animal* chenil, int taille);
 void afficher_animal(Animal a);
 void sauvegarder_chenil(Animal* chenil, int taille);
 void charger_chenil(Animal** chenil, int* taille);
-void calculer_temps_nettoyage(Animal* chenil, int taille);
-TempsNettoyage get_temps_nettoyage(Type espece);
+void afficher_temps_nettoyage(Animal* chenil, int taille);
+TempsNettoyage temps_nettoyage(Type espece);
