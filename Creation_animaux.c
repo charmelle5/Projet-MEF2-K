@@ -8,7 +8,7 @@ Animal creation_animal(){
   scanf("%49s",a.nom); // Limité à 49 caractères pour éviter le débordement
   
   printf("Saisir l'espece de l'animal :\n");
-  printf("Saisir une numéro : 1:Chien\n 2:Chat\n 3:Hamster\n 4:Autruche\n 5:Lapin\n 6:Poisson\n");
+  printf("Saisir une numéro :\n 1:Chien\n 2:Chat\n 3:Hamster\n 4:Autruche\n 5:Lapin\n 6:Poisson\n");
   scanf("%d",(int*)&a.espece); 
   while(a.espece < CHIEN || a.espece > POISSON) {
         printf("Erreur : choix invalide. Veuillez ressaisir :\n");
@@ -17,10 +17,10 @@ Animal creation_animal(){
   }
   getchar(); // Nettoyer le buffer
   
-  printf("Saisir l'annee de naissance :\n");
+  printf("Saisir l'annee de naissance : ");
   scanf("%d",&a.annee);
   
-  printf("Saisir le poids de l'animal :\n");
+  printf("Saisir le poids de l'animal : ");
   scanf("%f", &a.poids);
   
   printf("Saisir un commentaire (optionnel) :\n");
