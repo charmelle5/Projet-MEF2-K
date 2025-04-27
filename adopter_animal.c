@@ -13,12 +13,12 @@ void adopter_animal(Animal** chenil, int* taille){
     for (int i = 0; i < *taille; i++) {
         if ((*chenil)[i].num == num) {
             index = i;
-            break; // arrêt de la boucle losque le numéro d'indenfication trouvé
+            break; // arrêt de la boucle lorsque le numéro d'idenfication trouvé
         }
     }
 
     if (index == 0) {
-        printf("Animal non trouve.\n");
+        printf("Animal non trouvé.\n");
         return;
     }
 
@@ -39,7 +39,7 @@ void adopter_animal(Animal** chenil, int* taille){
     }
     *chenil = temp;
         
-    printf("Animal adopte avec succes !\n");
+    printf("Animal adopté avec succes !\n");
 
 
 }
