@@ -9,32 +9,7 @@
 #define MAX_ANIMAUX 50
 
 int main() {
-
-  Animal* chenil = NULL;
-  int taille = 0;
-  FILE* fichier = NULL;
-  fichier = fopen(" Animaux_Chenil.txt", "r+");
-  if (fichier == NULL){
-    printf("Ouverture du fichier impossible\n"); 
-    exit(1);
-  fputs(nom,fichier);
-  fclose(fichier);
-
-FILE *fichier = fopen("fichier.txt", "w");  // "w" = écriture (crée/écrase)
-    
-    if (fichier == NULL) {
-        printf("Erreur : impossible d'ouvrir le fichier.\n");
-        return 1;
-    }
-
-    // Écrire dans le fichier
-    fprintf(fichier, "Bonjour GitHub !\n");
-    fprintf(fichier, "Ligne 2.\n");
-
-    fclose(fichier);  // Fermer le fichier
-    printf("Écriture terminée.\n");
-
-    
+   
  Animal* chenil = NULL;
  int taille = 0;
  int choix;
