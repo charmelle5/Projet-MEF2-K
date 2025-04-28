@@ -1,5 +1,5 @@
 
-Projet MEF2 groupe K
+MEF2 groupe K
 
 
 # PROJET ChenYl-TECH
