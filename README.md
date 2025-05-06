@@ -44,7 +44,7 @@ make
 ## Structure du projet 
 La structure de notre projet est la suivante :                        
 
-├── Creation_chenil.c
+<pre> ``` ├── Creation_chenil.c
 ├── Creation_chenil.h
 ├── Option_menu.c
 ├── Option_menu.h
@@ -52,7 +52,7 @@ La structure de notre projet est la suivante :
 ├── Variante.h
 ├── main.c
 ├── Makefile
-└── README.md
+└── README.md ``` </pre>
 
 
 
