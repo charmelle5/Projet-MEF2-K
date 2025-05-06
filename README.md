@@ -48,16 +48,26 @@ make
 La structure de notre projet est la suivante :                        
 
 ├── src/
-│   ├── main.c                            # Code source
+
+│   ├── main.c                # Code source
+
 │   ├── Creation_chenil.c
+
 │   ├── Option_menu.c
+
 │   └── Variante.c
+
 ├── include/
+
 │   ├── Creation_chenil.h
+
 │   ├── Option_menu.h
+
 │   └── Variante.h
-├── Makefile                              # Compilation                                  
-| README.md                               # Ce fichier
+
+├── Makefile                   # Compilation     
+
+| README.md                    # Ce fichier
 
 
 ## Auteurs 👤  
