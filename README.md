@@ -25,14 +25,14 @@ Le programme permet d’ajouter, rechercher, modifier et supprimer les fiches de
 - Make
 
 ## Guide d'installation 📔 
-
+https://github.com/charmelle5/Projet-MEF2-K/blob/main/README.md
 
 ```bash
 ### Clonez le dépôt
-git clone https://github.com/celiast05/CY-BER_Path.git 
+git clone https://github.com/charmelle5/Projet-MEF2-K.git 
 
 ### Accédez au répertoire du projet
-cd CY-BER_Path
+cd Projet-MEF2-K
 
 ### Compilez le projet
 make
@@ -41,53 +41,29 @@ make
 ## Guide d'utilisation 📋
 
 ### Exécuter le programme
-./CY-BER_Path
+./exec
 
-### Exemple d'utilisation
-Notre procédure pour placer les cibles aléatoirement.
-
-```bash
-void placeTarget (Grid gridGame, Coordinate coord){
-    int createTarget = 0;
-    while (createTarget < 18){
-        coord = createCoordinate(rand() % gridGame.width, rand() % gridGame.height);
-        if (validePlacementTarget(gridGame, coord)){
-           gridGame.cases[coord.y][coord.x].type = TARGET;
-           gridGame.cases[coord.y][coord.x].id = 1 + createTarget;
-           createTarget++;
-        }
-    }
-}
-```
 
 ## Structure du projet 
-La structure de notre projet est la suivante :
+La structure de notre projet est la suivante :                        
 
-CY-BER_Path/                           
-
-| main.c                                   # Code source
-
-| game.c                                   # Exemple de module
-
-   └── gcc –c createGrid.c -o createGrid.o  # Fichier d'en-tête
-  
-   └── gcc –c test_grid.c -o test_grid.o
-  
-   └── gcc –c game.c -o game.o
-  
-| gcc createGrid.o test_grid.o game.c -o   # Exécution 
-
-| game.h                                   # Header commun
-
-| Makefile                                 # Compilation
-
-| README.md                                # Ce fichier
+├── src/
+│   ├── main.c                            # Code source
+│   ├── Creation_chenil.c
+│   ├── Option_menu.c
+│   └── Variante.c
+├── include/
+│   ├── Creation_chenil.h
+│   ├── Option_menu.h
+│   └── Variante.h
+├── Makefile                              # Compilation                                  
+| README.md                               # Ce fichier
 
 
 ## Auteurs 👤  
 
-👤 ASTIER Célia
+👤 Lasugaa
 
-👤 BIDI SINDA Grace
+👤 Nirmine
 
 👤 NJANKOU NANA Charmelle
