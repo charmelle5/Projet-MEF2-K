@@ -2,11 +2,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include"Animal.h"
+#include"Option_menu.h"
+#include"Creation_chenil.h"
+#include"Variante.h"
 
-#define MAXCHAR 50
-#define MAXCOM 200
-#define MAX_ANIMAUX 50
 
 int main() {
    
