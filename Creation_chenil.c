@@ -1,3 +1,5 @@
+#include"Creation_chenil.h"
+
 
 Animal creation_animal(){
   Animal a;
@@ -7,9 +9,8 @@ Animal creation_animal(){
   
   printf("Saisir le nom de l'animal :\n");
   scanf("%49s",a.nom); // Limité à 49 caractères pour éviter le débordement
-  
-  printf("Saisir l'espece de l'animal :\n");
-  printf("Saisir une numéro :\n 1:Chien\n 2:Chat\n 3:Hamster\n 4:Autruche\n 5:Lapin\n 6:Poisson\n");
+ 
+  printf("Saisir l'espece de l'animal :\n 1:Chien\n 2:Chat\n 3:Hamster\n 4:Autruche\n 5:Lapin\n 6:Poisson\n");
   scanf("%d",(int*)&a.espece); 
   while(a.espece < CHIEN || a.espece > POISSON) {
         printf("Erreur : choix invalide. Veuillez ressaisir :\n");
@@ -18,11 +19,17 @@ Animal creation_animal(){
   }
   getchar(); // Nettoyer le buffer
   
-  printf("Saisir l'annee de naissance : ");
-  scanf("%d",&a.annee);
-  
-  printf("Saisir le poids de l'animal : ");
-  scanf("%f", &a.poids);
+ do {
+        printf("Saisir l'année de naissance (2015-2025) : ");
+        scanf("%d", &a.annee);
+    } while (a.annee < 2015 || a.annee > 2025);
+
+
+  do {
+        printf("Saisir le poids de l'animal: ");
+        scanf("%f", &a.poids);
+    } while (a.poids < 1 || a.poids > 30);
+
   
   printf("Saisir un commentaire (optionnel) :\n");
   getchar(); // Pour consommer le '\n' restant
