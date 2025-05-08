@@ -29,7 +29,7 @@ Animal creation_animal(){
  do {
         printf("Saisir l'année de naissance (2015-2025) : ");
         scanf("%d", &a.annee);
-    } while (a.annee < 2015 || a.annee > 2025 || scanf("%d", &a.annee) != 1);
+    } while (a.annee < 2010 || a.annee > 2025 || scanf("%d", &a.annee) != 1);
 
 
   do {
