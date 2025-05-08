@@ -6,29 +6,36 @@ Animal creation_animal(){
   char temp_comment[MAXCOM];
   
   a.num = rand() % 9000 + 1000; // Entre 1000 et 9999
+
+  do {
+        printf("Saisir le nom de l'animal :\n");
+        scanf("%49s",a.nom); // Limité à 49 caractères pour éviter le débordement
+    } while(scanf("%d",(int*)&a.espece) != 1)
   
-  printf("Saisir le nom de l'animal :\n");
-  scanf("%49s",a.nom); // Limité à 49 caractères pour éviter le débordement
+  
  
-  printf("Saisir l'espece de l'animal :\n 1:Chien\n 2:Chat\n 3:Hamster\n 4:Autruche\n 5:Lapin\n 6:Poisson\n");
-  scanf("%d",(int*)&a.espece); 
-  while(a.espece < CHIEN || a.espece > POISSON) {
+  do {
+        printf("Saisir l'espece de l'animal :\n 1:Chien\n 2:Chat\n 3:Hamster\n 4:Autruche\n 5:Lapin\n 6:Poisson\n");
+        scanf("%d",(int*)&a.espece); 
+    } while(scanf("%d",(int*)&a.espece) != 1)
+  
+  do{
         printf("Erreur : choix invalide. Veuillez ressaisir :\n");
         printf("1:Chien\n2:Chat\n3:Hamster\n4:Autruche\n5:Lapin\n6:Poisson\n");
         scanf("%d", (int*)&a.espece);
-  }
+    } while(a.espece < CHIEN || a.espece > POISSON || scanf("%d", (int*)&a.espece) != 1)
   getchar(); // Nettoyer le buffer
   
  do {
         printf("Saisir l'année de naissance (2015-2025) : ");
         scanf("%d", &a.annee);
-    } while (a.annee < 2015 || a.annee > 2025);
+    } while (a.annee < 2015 || a.annee > 2025 || scanf("%d", &a.annee) != 1);
 
 
   do {
         printf("Saisir le poids de l'animal: ");
         scanf("%f", &a.poids);
-    } while (a.poids < 1 || a.poids > 30);
+    } while (a.poids < 1 || a.poids > 30 || scanf("%f", &a.poids) != 1);
 
   
   printf("Saisir un commentaire (optionnel) :\n");
