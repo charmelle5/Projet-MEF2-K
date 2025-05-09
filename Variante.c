@@ -1,3 +1,5 @@
+#include"Variante.h"
+
 // Fonction indicant le temps de nettoyage pour chaque espèce 
 TempsNettoyage temps_nettoyage(Type espece) {
     TempsNettoyage temps;
