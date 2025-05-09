@@ -31,13 +31,13 @@ Animal creation_animal(){
     vider_buffer();
 
 	do {
-        printf("Saisir l'année de naissance (2015-2025) : ");
+        printf("Saisir l'année de naissance (2000-2025) : ");
         if (scanf("%d", &a.annee) != 1) {
             printf("Saisie invalide.\n");
             vider_buffer();
             continue;
         }
-    } while (a.annee <= 2015 || a.annee >= 2025 );
+    } while (a.annee <= 2000 || a.annee >= 2025 );
     vider_buffer();
     
 
