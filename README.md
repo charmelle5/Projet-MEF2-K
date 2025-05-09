@@ -59,8 +59,8 @@ La structure de notre projet est la suivante :
 
 ## Auteurs 👤  
 
-👤 Lasugaa
+👤 KALIAMOORTHY Lasugaa
 
-👤 Nirmine
+👤 BOUYA Nirmine
 
 👤 NJANKOU NANA Charmelle
