@@ -35,8 +35,8 @@ TempsNettoyage temps_nettoyage(Type espece) {
 
 void affiche_temps_nettoyage(Animal* chenil, int taille) {
     if (chenil == NULL || taille < 0) {
-        printf("Problème .\n");
-        return;
+        printf("Erreur dans les parametres de l'affichage du nettoyage.\n");
+        exit(1);
     }
 
     if (taille == 0) {
@@ -55,7 +55,7 @@ void affiche_temps_nettoyage(Animal* chenil, int taille) {
     printf("\n=== TEMPS DE NETTOYAGE ===\n");
     for (int i = 0; i < taille; i++) {
         TempsNettoyage t = temps_nettoyage(chenil[i].espece);
-        printf("\n---Temps de nettoyage de %s---\n",chenil[i].nom);
+        printf("\n---Temps de nettoyage N°%d : %s  ---\n", chenil[i].num, chenil[i].nom);
         printf("Temps quotidien : %d min\n", t.temps_quotidien);
         printf("Temps hebdomadaire supplementaire : %d min\n", t.temps_hebdomadaire);
         printf("Temps hebdomadaire de nettoyage : %d min\n",(t.temps_quotidien*7) + t.temps_hebdomadaire);
