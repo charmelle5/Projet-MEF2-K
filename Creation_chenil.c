@@ -49,7 +49,7 @@ Animal creation_animal(){
             vider_buffer();
             continue;
         }
-    } while(a.poids <= 0);
+    } while(a.poids <= 0 || a.poids >=100);
     vider_buffer();
     
     
