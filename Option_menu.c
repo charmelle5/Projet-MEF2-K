@@ -75,39 +75,30 @@ void adopter_animal(Animal** chenil, int* taille){
 
 void rechercher_animal(Animal* chenil, int taille) {
 
-	if (chenil == NULL || taille <= 0) {
-        	printf("Aucun animal dans le chenil.\n");
-        	return;
-    	}
-	
+	if (taille == 0) {
+		printf("Aucun animal dans le chenil.\n");
+		return;
+	}
 	int choix;
 	int espece;
-	int age;
 	int type_age;
 	int annee_actuelle = 2025;
 	char nom_recherche[MAXCHAR];
-	
+
 	printf("\n=== CRITERES DE RECHERCHE ===\n");
 	printf("1. Par nom\n");
 	printf("2. Par espece\n");
 	printf("3. Par age (jeune <2 ans, senior >10 ans)\n");
 	printf("Votre choix : ");
-	if (scanf("%d", &choix) != 1 || choix < 1 || choix > 3) {
-        	printf("Choix invalide.\nVeuillez refaire votre choix\n");
-		printf("1. Par nom\n");
-		printf("2. Par espece\n");
-		printf("3. Par age (jeune <2 ans, senior >10 ans)\n");
-		printf("Votre choix : ");
-		scanf("%d", &choix);
-   	}	
+	scanf("%d", &choix);
 	getchar();
 
 	printf("\n=== RESULTATS DE LA RECHERCHE ===\n");
 	int trouve = 0;
-	int resultats[MAX_ANIMAUX];
+	int resultats[MAX_ANIMAUX]; // Stocke les indices des animaux trouvC)s
 	int nb_resultats = 0;
 	
-	// Demande à l'utilisateur les critères de recherche pour la comparaison
+	// Préparation des critères de recherche pour la comparaison
 	switch(choix) {
         case 1:
             printf("Entrez le nom a rechercher : ");
@@ -146,7 +137,7 @@ void rechercher_animal(Animal* chenil, int taille) {
                 }
 			break;
 		case 3:
-			age = annee_actuelle - a.annee;
+			int age = annee_actuelle - a.annee;
                 if ((type_age == 1 && age < 2) || (type_age == 2 && age > 10)) {
                     match = 1;
                 }
@@ -154,13 +145,13 @@ void rechercher_animal(Animal* chenil, int taille) {
 		}
 
 		if (match) {
-			resultats[nb_resultats++] = i; // Stocke les indices des animaux trouvés
+			resultats[nb_resultats++] = i;
 		}
 	}
 	
     
 	if (nb_resultats>0) {
-	    	// Afficher tous les animaux correspondants aux critère rechercher
+	    // Afficher les animaux correspondants aux critère rechercher
 		printf("\n=== %d ANIMAUX TROUVES ===\n", nb_resultats);
 		for (int r = 0; r < nb_resultats; r++) {
 			printf("\n--- Animal %d/%d ---\n", r+1, nb_resultats);
@@ -168,20 +159,20 @@ void rechercher_animal(Animal* chenil, int taille) {
 		}
 		
 		// Selectionner l'animal voulu
-        	if (nb_resultats > 1) {
-         		int selection;
-          		printf("\nEntrez le numero de l'animal a selectionner (0 pour annuler) : ");
-      	        	scanf("%d", &selection);
-                   	getchar();
+        if (nb_resultats > 1) {
+            int selection;
+            printf("\nEntrez le numero de l'animal a selectionner (0 pour annuler) : ");
+            scanf("%d", &selection);
+            getchar();
             
-            	   	if (selection > 0 && selection <= nb_resultats) {
-                		printf("\n=== ANIMAL RECHERCHE ===\n");
-                		afficher_animal(chenil[resultats[selection-1]]);
-            	     	}
-        	}
+            if (selection > 0 && selection <= nb_resultats) {
+                printf("\n=== ANIMAL SELECTIONNE ===\n");
+                afficher_animal(chenil[resultats[selection-1]]);
+            }
         }
+	}
 	else {
-	  	printf("Aucun animal ne correspond aux criteres de recherche.\n");
+		printf("Aucun animal ne correspond aux criteres de recherche.\n");
 	}
 
 
