@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include"Creation_chenil.h"
 
 void ajouter_animal(Animal** chenil, int* taille){
   if (*taille >= MAX_ANIMAUX) {
