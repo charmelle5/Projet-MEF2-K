@@ -4,8 +4,8 @@
 
 void ajouter_animal(Animal** chenil, int* taille){
 
-  if (chenil == NULL || taille <= 0) {
-        printf("Aucun animal dans le chenil.\n");
+  if (chenil == NULL || *taille <= 0) {
+        printf("Erreur dans les parametres pour l'ajout.\n");
         return;
     }
 	
@@ -38,12 +38,15 @@ void adopter_animal(Animal** chenil, int* taille){
 
     int num = 0;
     printf("\n=== ADOPTION D'UN ANIMAL ===\n");
-    printf("Entrez le numero d'identification : ");
-    if (scanf("%d", &num) != 1) {
-        printf("Numero invalide.\n");
-        vider_buffer();
-        return;
-    }
+    
+    do {
+	    printf("Entrez le numero d'identification : ");
+	    if (scanf("%d", &num) != 1) {
+        	printf("Numero invalide.\n");
+        	vider_buffer();
+        	continue;
+    	     }
+    }while(num<1000 || num>9000);
     vider_buffer();
 
     int index = 0;
