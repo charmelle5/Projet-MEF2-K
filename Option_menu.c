@@ -3,6 +3,12 @@
 #include"Creation_chenil.h"
 
 void ajouter_animal(Animal** chenil, int* taille){
+
+  if (chenil == NULL || taille <= 0) {
+        printf("Aucun animal dans le chenil.\n");
+        return;
+    }
+	
   if (*taille >= MAX_ANIMAUX) {
         printf("Le chenil est plein (capacité max: %d).\n", MAX_ANIMAUX);
         return;
@@ -26,16 +32,19 @@ void ajouter_animal(Animal** chenil, int* taille){
 
 void adopter_animal(Animal** chenil, int* taille){
     if (chenil == NULL || *taille <= 0) {
-        printf("Aucun animal dans le chenil.\n");
+        printf("Erreur dans les parametres pour l'adoption.\n");
         return;
     }
 
-    int num;
+    int num = 0;
     printf("\n=== ADOPTION D'UN ANIMAL ===\n");
     printf("Entrez le numero d'identification : ");
     if (scanf("%d", &num) != 1) {
-        exit(3);
+        printf("Numero invalide.\n");
+        vider_buffer();
+        return;
     }
+    vider_buffer();
 
     int index = 0;
     for (int i = 0; i < *taille; i++) {
@@ -75,6 +84,10 @@ void adopter_animal(Animal** chenil, int* taille){
 
 void rechercher_animal(Animal* chenil, int taille) {
 
+    	if (chenil == NULL || *taille <= 0) {
+        	printf("Erreur dans les parametres pour la recherche.\n");
+        	return;
+    	}
 	if (taille == 0) {
 		printf("Aucun animal dans le chenil.\n");
 		return;
