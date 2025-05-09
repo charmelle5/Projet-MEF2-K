@@ -35,7 +35,7 @@ TempsNettoyage temps_nettoyage(Type espece) {
 
 void affiche_temps_nettoyage(Animal* chenil, int taille) {
     if (chenil == NULL || taille < 0) {
-        printf("Donnees invalides.\n");
+        printf("Problème .\n");
         return;
     }
 
