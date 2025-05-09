@@ -24,6 +24,7 @@
         }Animal;
 
         // Prototypes
+        void vider_buffer();
         Animal creation_animal();
         void afficher_animal(Animal a);
         void sauvegarder_chenil(Animal* chenil, int taille);
