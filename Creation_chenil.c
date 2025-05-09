@@ -1,5 +1,9 @@
 #include"Creation_chenil.h"
 
+void vider_buffer(){
+    while(getchar() != '\n'){
+    }
+}
 
 Animal creation_animal(){
   Animal a;
