@@ -30,7 +30,7 @@ Animal creation_animal(){
     } while(a.espece < CHIEN || a.espece > POISSON);
     vider_buffer();
 
-	do {
+    do {
         printf("Saisir l'année de naissance (2000-2025) : ");
         if (scanf("%d", &a.annee) != 1) {
             printf("Saisie invalide.\n");
@@ -54,15 +54,17 @@ Animal creation_animal(){
     
     
 	
-	printf("Saisir un commentaire (optionnel):\n");
+    printf("Saisir un commentaire (optionnel):\n");
     if (fgets(temp_comment, MAXCOM, stdin) == NULL) {
         temp_comment[0] = '\0';
-    } else {
+    } 
+    else {
         temp_comment[strcspn(temp_comment, "\n")] = '\0'; // Supprimer le saut de ligne
     }
 
     strncpy(a.commentaire, temp_comment, MAXCOM-1);
     a.commentaire[MAXCOM-1] = '\0';
+	
   return a;
 }
 
@@ -80,6 +82,12 @@ void afficher_animal(Animal a) {
 }
 
 void charger_chenil(Animal** chenil, int* taille) {
+
+    if (chenil == NULL || taille <= 0) {
+        printf("Aucun animal dans le chenil.\n");
+        return;
+    }    
+    
     // Actualisation du tableau chenil en lisant le ficher
     FILE* fichier = fopen("Animaux_Chenil.dat", "rb");
     if (fichier == NULL) {
@@ -103,7 +111,7 @@ void charger_chenil(Animal** chenil, int* taille) {
         fclose(fichier);
         return;
     }
-    // Faire la verification !!!!
+	
     fread(*chenil, sizeof(Animal), *taille, fichier); // Remplit le tableau chenil avec les données binaires du fichier.
     fclose(fichier);
 }
@@ -128,7 +136,7 @@ void sauvegarder_chenil(Animal* chenil, int taille){
         fclose(fichier);
         return;
     }  
-  // Verification a faire !!!
+	
   fwrite(chenil, sizeof(Animal), taille, fichier);  // Écrit tous les animaux du tableau chenil
   fclose(fichier);
 }
