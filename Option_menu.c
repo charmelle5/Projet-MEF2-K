@@ -84,7 +84,7 @@ void adopter_animal(Animal** chenil, int* taille){
 
 void rechercher_animal(Animal* chenil, int taille) {
 
-    	if (chenil == NULL || *taille <= 0) {
+    	if (chenil == NULL || taille <= 0) {
         	printf("Erreur dans les parametres pour la recherche.\n");
         	return;
     	}
@@ -102,9 +102,16 @@ void rechercher_animal(Animal* chenil, int taille) {
 	printf("1. Par nom\n");
 	printf("2. Par espece\n");
 	printf("3. Par age (jeune <2 ans, senior >10 ans)\n");
-	printf("Votre choix : ");
-	scanf("%d", &choix);
-	getchar();
+	
+	do{
+	    printf("Votre choix : ");
+	    if (scanf("%d", &choix) != 1 ){
+        	  printf("Choix invalide.\n");
+        	  vider_buffer();
+        	  continue;
+    	    }
+	}while(choix < 1 || choix > 3);
+    	vider_buffer();
 
 	printf("\n=== RESULTATS DE LA RECHERCHE ===\n");
 	int trouve = 0;
@@ -114,19 +121,39 @@ void rechercher_animal(Animal* chenil, int taille) {
 	// Préparation des critères de recherche pour la comparaison
 	switch(choix) {
         case 1:
-            printf("Entrez le nom a rechercher : ");
-            fgets(nom_recherche, MAXCHAR, stdin);
-            nom_recherche[strcspn(nom_recherche, "\n")] = '\0';
+            do{
+                printf("Entrez le nom a rechercher : ");
+                if (fgets(nom_recherche, MAXCHAR, stdin) == NULL) {
+                    printf("Erreur de saisie.\n");
+                    return;
+                }
+                nom_recherche[strcspn(nom_recherche, "\n")] = '\0';
+            }while(strlen(nom_recherche) == 0);
+            
             break;
         case 2:
-            printf("Entrez le numero de l'espece (1:Chien, 2:Chat, 3:Hamster, 4:Autruche, 5:Lapin, 6:Poisson): ");
-            scanf("%d", &espece);
-            getchar();
+            do{
+                printf("Entrez le numero de l'espece (1:Chien, 2:Chat, 3:Hamster, 4:Autruche, 5:Lapin, 6:Poisson): ");
+                if (scanf("%d", &espece) != 1 ) {
+                    printf("Espece invalide.\n");
+                    vider_buffer();
+                    continue;
+                }
+            }while(espece < 1 || espece > 6);
+            vider_buffer();
+		
             break;
         case 3:
-            printf("Rechercher :\n1. Jeune (<2 ans)\n2. Senior (>10 ans)\nVotre choix : ");
-            scanf("%d", &type_age);
-            getchar();
+            do{
+                printf("Rechercher :\n1. Jeune (<2 ans)\n2. Senior (>10 ans)\nVotre choix : ");
+                if (scanf("%d", &type_age) != 1 ) {
+                    printf("Choix invalide.\n");
+                    vider_buffer();
+                    continue;
+                }
+            }while(type_age != 1 && type_age != 2);
+            vider_buffer();
+		
             break;
         default:
             printf("Choix invalide.\n");
@@ -140,20 +167,29 @@ void rechercher_animal(Animal* chenil, int taille) {
 
 		switch(choix) {
 		case 1:
+			
 			if (strstr(a.nom, nom_recherche)) {
-                    match = 1;
-                }
+                    	   match = 1;
+                	}
 			break;
+			
 		case 2:
+			
 			if (a.espece == espece) {
-                    match = 1;
-                }
+                   	   match = 1;
+                	}
 			break;
+			
 		case 3:
+			
 			int age = annee_actuelle - a.annee;
-                if ((type_age == 1 && age < 2) || (type_age == 2 && age > 10)) {
-                    match = 1;
-                }
+            		if (type_age == 1 && age < 2) {
+                	   match = 1;  // Jeune
+            		} 
+            		else if (type_age == 2 && age > 10) {
+                	   match = 1;  // Senior
+            		}
+			
 			break;
 		}
 
@@ -171,12 +207,19 @@ void rechercher_animal(Animal* chenil, int taille) {
 			afficher_animal(chenil[resultats[r]]);
 		}
 		
-		// Selectionner l'animal voulu
+	// Selectionner l'animal voulu
         if (nb_resultats > 1) {
-            int selection;
-            printf("\nEntrez le numero de l'animal a selectionner (0 pour annuler) : ");
-            scanf("%d", &selection);
-            getchar();
+            int selection = 0;
+            do{
+                printf("\nEntrez le numero de l'animal a selectionner (0 pour annuler) : ");
+                if (scanf("%d", &selection) != 1) {
+                    printf("Saisie invalide.\n");
+                    vider_buffer();
+                    continue;
+                }
+            }while(selection<0 || selection>nb_resultats);
+            vider_buffer();
+
             
             if (selection > 0 && selection <= nb_resultats) {
                 printf("\n=== ANIMAL SELECTIONNE ===\n");
@@ -187,7 +230,6 @@ void rechercher_animal(Animal* chenil, int taille) {
 	else {
 		printf("Aucun animal ne correspond aux criteres de recherche.\n");
 	}
-
 
 }
 
