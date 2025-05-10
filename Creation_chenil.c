@@ -9,7 +9,14 @@ Animal creation_animal(){
   Animal a;
   char temp_comment[MAXCOM];
   
-  a.num = rand() % 9000 + 1000; // Entre 1000 et 9999
+  if (dernier_numero <= dernier_numero + MAX_ANIMAUX){
+	  dernier_numero++; // Génération du numéro unique
+	  a.num = dernier_numero;
+  }
+  else{
+	  printf("Il n'y a plus de place dans notre chenil !");
+	  exit(1);
+  }
 
   do {
         printf("Saisir le nom de l'animal ");
@@ -83,8 +90,9 @@ void afficher_animal(Animal a) {
 
 void charger_chenil(Animal** chenil, int* taille) {
 
-    if (chenil == NULL || taille <= 0) {
+    if (chenil == NULL || *taille <= 0) {
         printf("Aucun animal dans le chenil.\n");
+	dernier_numero = 1000; // Initialisation si premier lancement
         return;
     }    
     
@@ -113,6 +121,14 @@ void charger_chenil(Animal** chenil, int* taille) {
     }
 	
     fread(*chenil, sizeof(Animal), *taille, fichier); // Remplit le tableau chenil avec les données binaires du fichier.
+
+     // Trouve le numéro max pour initialiser dernier_numero
+    for (int i = 0; i < *taille; i++) {
+        if ((*chenil)[i].num > dernier_numero) {
+            dernier_numero = (*chenil)[i].num;
+        }
+    }
+	
     fclose(fichier);
 }
 
