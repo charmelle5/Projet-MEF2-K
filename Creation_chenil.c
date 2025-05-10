@@ -116,6 +116,12 @@ void charger_chenil(Animal** chenil, int* taille) {
         printf("Aucun animal dans le chenil.\n");
         return;
     }    
+
+     if (*taille < 0 || *taille > MAX_ANIMAUX) {
+        printf("Donnees corrompues: nombre d'animaux invalide.\n");
+        fclose(fichier);
+        return;
+    }
     
     // Actualisation du tableau chenil en lisant le ficher
     FILE* fichier = fopen("Animaux_Chenil.dat", "rb");
@@ -129,11 +135,7 @@ void charger_chenil(Animal** chenil, int* taille) {
         fclose(fichier);
         return;
     }
-    if (*taille < 0 || *taille > MAX_ANIMAUX) {
-        printf("Donnees corrompues: nombre d'animaux invalide.\n");
-        fclose(fichier);
-        return;
-    }
+    
     *chenil = malloc(*taille * sizeof(Animal)); // Allocation mémoire pour le tableau chenil
     if (*chenil == NULL) {
         printf("Erreur d'allocation memoire.\n");
@@ -173,6 +175,11 @@ void sauvegarder_chenil(Animal* chenil, int taille){
         return;
     }  
 	
-  fwrite(chenil, sizeof(Animal), taille, fichier);  // Écrit tous les animaux du tableau chenil
+  // Écrit tous les animaux du tableau chenil
+  if (fwrite(chenil, sizeof(Animal), taille, fichier) != (size_t)taille) {
+        printf("Erreur d'ecriture des animaux.\n");
+        fclose(fichier);
+        return;
+    } 
   fclose(fichier);
 }
