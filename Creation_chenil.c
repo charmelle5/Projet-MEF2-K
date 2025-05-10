@@ -1,22 +1,44 @@
 #include"Creation_chenil.h"
+// Déclaration des variables statiques pour la gestion des numéros
+static int numeros_utilises[MAX_ANIMAUX]; 
+static int nb_numeros = 0;
 
 void vider_buffer(){
     while(getchar() != '\n'){
     }
 }
 
+// Fonction de vérification des doublons
+int numero_existe_deja(int num) {
+    for (int i = 0; i < nb_numeros; i++) {
+        if (numeros_utilises[i] == num) {
+		return 1;
+	}
+    }
+    return 0;
+}
+
 Animal creation_animal(){
   Animal a;
   char temp_comment[MAXCOM];
   
-  if (dernier_numero <= dernier_numero + MAX_ANIMAUX){
-	  dernier_numero++; // Génération du numéro unique
-	  a.num = dernier_numero;
-  }
-  else{
-	  printf("Il n'y a plus de place dans notre chenil !");
-	  exit(1);
-  }
+  int tentatives_max = 100; // Évite les boucles infinies
+  int tentatives = 0;
+  
+   // Génération d'un numéro unique
+    do {
+        a.num = rand() % 9000 + 1000; // 1000-9999
+        tentatives++;
+        
+    } while(numero_existe_deja(a.num));
+    
+    if (tentatives >= tentatives_max) {
+            printf("Erreur : impossible de générer un numéro unique après %d tentatives\n", tentatives_max);
+            exit(EXIT_FAILURE);
+        }
+        
+     // Ajoute le nouveau numéro dans le tableau de num d'id
+    numeros_utilises[nb_numeros++] = a.num;
 
   do {
         printf("Saisir le nom de l'animal ");
@@ -120,6 +142,12 @@ void charger_chenil(Animal** chenil, int* taille) {
     }
 	
     fread(*chenil, sizeof(Animal), *taille, fichier); // Remplit le tableau chenil avec les données binaires du fichier.
+	
+    // Copie les num du chenil dans le tableau d'id
+    nb_numeros = 0;
+    for (int i = 0; i < *taille; i++) {
+        numeros_utilises[nb_numeros++] = (*chenil)[i].num;
+    }
 	
     fclose(fichier);
 }
