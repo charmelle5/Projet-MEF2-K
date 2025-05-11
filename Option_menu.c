@@ -28,6 +28,14 @@ void ajouter_animal(Animal** chenil, int* taille){
   (*taille)++;
 
   printf("\n✅ Animal ajouté !\n");
+
+  if (sauvegarder_chenil(*chenil, *taille)) {
+        printf("Sauvegarde automatique réussie.\n");
+  } 
+  else {
+        printf("Erreur lors de la sauvegarde !\n");
+  }
+	
 }
 
 void adopter_animal(Animal** chenil, int* taille){
@@ -80,7 +88,12 @@ void adopter_animal(Animal** chenil, int* taille){
     *chenil = temp;
         
     printf("Animal adopté avec succes !\n");
-
+	
+    if (sauvegarder_chenil(*chenil, *taille)) {
+        printf("Sauvegarde automatique réussie.\n");
+    } else {
+        printf("Erreur lors de la sauvegarde !\n");
+    }
 
 }
 
