@@ -23,21 +23,11 @@ Animal creation_animal(){
   Animal a;
   char temp_comment[MAXCOM];
   
-  int tentatives_max = 100; // Évite les boucles infinies
-  int tentatives = 0;
-  
    // Génération d'un numéro unique
     do {
         a.num = rand() % 9000 + 1000; // 1000-9999
-        tentatives++;
-        
     } while(numero_existe_deja(a.num));
     
-    if (tentatives >= tentatives_max) {
-            printf("Erreur : impossible de générer un numéro unique après %d tentatives\n", tentatives_max);
-            exit(EXIT_FAILURE);
-        }
-        
      // Ajoute le nouveau numéro dans le tableau de num d'id
     numeros_utilises[nb_numeros++] = a.num;
 
@@ -52,7 +42,7 @@ Animal creation_animal(){
     } while(strlen(a.nom) == 0);
 	
     do {
-        printf("Choisissez l'espece:\n1:Chien\n2:Chat\n3:Hamster\n4:Autruche\n5:Lapin\n6:Poisson\n");
+        printf("1:Chien\n2:Chat\n3:Hamster\n4:Autruche\n5:Lapin\n6:Poisson\nChoisissez l'espece: ");
         if (scanf("%d", (int*)&a.espece) != 1) {
             printf("Saisie invalide.\n");
             vider_buffer();
