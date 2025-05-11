@@ -6,6 +6,10 @@
 #include"Creation_chenil.h"
 #include"Variante.h"
 
+// Déclaration des variables statiques pour la gestion des numéros
+static int numeros_utilises[MAX_ANIMAUX]; 
+static int nb_numeros = 0;
+
 
 int main() {
 
