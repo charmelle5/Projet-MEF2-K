@@ -4,7 +4,7 @@
 
 void ajouter_animal(Animal** chenil, int* taille){
 
-  if (chenil == NULL || *taille <= 0) {
+  if (chenil == NULL || *taille < 0) {
         printf("Erreur dans les parametres pour l'ajout.\n");
         return;
     }
