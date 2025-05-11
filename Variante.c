@@ -23,9 +23,11 @@ TempsNettoyage temps_nettoyage(Type espece) {
         case LAPIN:
             temps.temps_quotidien = 10;
             temps.temps_hebdomadaire = 30;
+            break;
         case POISSON:
             temps.temps_quotidien = 5;
             temps.temps_hebdomadaire = 15;
+            break;
         default:
             temps.temps_quotidien = 2;
             temps.temps_hebdomadaire = 0;
@@ -74,5 +76,59 @@ void affiche_temps_nettoyage(Animal* chenil, int taille) {
     printf("Temps hebdomadaire supplementaire : %d minutes\n", total_hebdomadaire);
     printf("Total semaine : %d minutes\n", (total_quotidien * 7) + total_hebdomadaire);
 
+}
+
+
+
+void afficher_statistiques_especes(Animal* chenil, int taille) {
     
+    if (chenil == NULL || taille <= 0) {
+        printf("Aucun animal dans le chenil.\n");
+        return;
+    }
+    
+    
+
+    // Tableau des noms d'espèces
+    const char* noms_especes[] = {"Chien", "Chat", "Hamster", "Autruche", "Lapin", "Poisson"};
+    
+    // Tableau des compteurs (initialisés à 0)
+    int compteurs[6] = {0};
+
+    // Compter les animaux
+    for (int i = 0; i < taille; i++) {
+        if (chenil[i].espece >= CHIEN && chenil[i].espece <= POISSON) {
+            compteurs[chenil[i].espece - 1]++;
+        }
+    }
+    
+    // Tri par ordre décroissant
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 5 - i; j++) {
+            if (compteurs[j] < compteurs[j+1]) {
+                // Échanger compteurs
+                int temp = compteurs[j];
+                compteurs[j] = compteurs[j+1];
+                compteurs[j+1] = temp;
+            
+               // Échanger noms
+                const char* temp_nom = noms_especes[j];
+                noms_especes[j] = noms_especes[j+1];
+                noms_especes[j+1] = temp_nom;
+            }
+        }
+    }
+    
+
+
+    // Afficher les résultats
+    printf("\n=== STATISTIQUES DU CHENIL ===\n");
+    printf("Nombre total d'animaux: %d\n\n", taille);
+    printf("Répartition par espèce (ordre décroissant):\n");
+    
+    for (int i = 0; i < 6; i++) {
+        if (compteurs[i] > 0) {
+            printf("%s: %d \n", noms_especes[i], compteurs[i]);
+        }
+    }
 }
