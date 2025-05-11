@@ -7,8 +7,11 @@
         int temps_quotidien;
         int temps_hebdomadaire;
         } TempsNettoyage;
+
+    //Protocoles pour les variantes
     TempsNettoyage temps_nettoyage();
     TempsNettoyage temps_nettoyage(Type espece);
     void affiche_temps_nettoyage(Animal* chenil, int taille);
+    void afficher_statistiques_especes(Animal* chenil, int taille);
 
 #endif
