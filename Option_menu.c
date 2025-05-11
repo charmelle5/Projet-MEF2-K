@@ -111,6 +111,7 @@ void rechercher_animal(Animal* chenil, int taille) {
 	int choix =  0;
 	int espece = 0;
 	int type_age = 0;
+	int age = 0;
 	int annee_actuelle = 2025;
 	char nom_recherche[MAXCHAR];
 
