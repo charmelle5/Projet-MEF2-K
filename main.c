@@ -51,7 +51,7 @@ srand(time(NULL));
               affiche_temps_nettoyage(chenil, taille);
               break;
           case 5:
-               afficher_statistiques_especes(chenil, taille);
+               afficher_inventaire_chenil(chenil, taille);
                break;
           case 6:
             printf("Au revoir !\n");
