@@ -31,11 +31,15 @@ srand(time(NULL));
     printf("5. Afficher l'inventaire du chenil\n");
     printf("6. Quitter\n");
     printf("Votre choix : ");
-    if (scanf("%d", &choix) != 1) {
-            printf("Saisie invalide. Veuillez entrer un nombre.\n");
-            exit(1);
-    }
-    getchar(); // Pour consommer le '\n'
+    do{
+        printf("Votre choix : ");
+        if (scanf("%d", &choix) != 1) {
+            printf("Saisie invalide.\n");
+            vider_buffer();
+        	  continue;
+    	    }
+	}while(choix < 1 || choix > 6);
+    vider_buffer();
 
     switch(choix) {
           case 1:
