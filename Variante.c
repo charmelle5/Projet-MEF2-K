@@ -98,11 +98,11 @@ void afficher_statistiques_especes(Animal* chenil, int taille) {
     // Compter les animaux
     for (int i = 0; i < taille; i++) {
         if (chenil[i].espece >= CHIEN && chenil[i].espece <= POISSON) {
-            compteurs[chenil[i].espece - 1]++;
+            compteurs[chenil[i].espece - 1]++; //
         }
     }
     
-    // Tri par ordre décroissant
+    // Tri à bulles par ordre décroissant
     for (int i = 0; i < 5; i++) {
         for (int j = 0; j < 5 - i; j++) {
             if (compteurs[j] < compteurs[j+1]) {
@@ -125,7 +125,8 @@ void afficher_statistiques_especes(Animal* chenil, int taille) {
     printf("\n=== STATISTIQUES DU CHENIL ===\n");
     printf("Nombre total d'animaux : %d\n\n", taille);
     printf("Répartition par espèce :\n");
-    
+
+    //Affiche les animaux triés
     for (int i = 0; i < 6; i++) {
         if (compteurs[i] > 0) {
             printf("%s: %d \n", noms_especes[i], compteurs[i]);
