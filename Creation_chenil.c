@@ -58,7 +58,7 @@ Animal creation_animal(){
             vider_buffer();
             continue;
         }
-    } while (a.annee <= 2000 || a.annee >= 2025 );
+    } while (a.annee < 2000 || a.annee > 2025 );
     vider_buffer();
     
 
