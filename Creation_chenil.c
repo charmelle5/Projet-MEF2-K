@@ -41,7 +41,7 @@ Animal creation_animal(){
     numeros_utilises[nb_numeros++] = a.num;
 
   do {
-        printf("Saisir le nom de l'animal ");
+        printf("Saisir le nom de l'animal : ");
         if (fgets(a.nom, MAXCHAR, stdin) == NULL) {
             printf("Erreur de saisie.\n");
             exit(EXIT_FAILURE);
