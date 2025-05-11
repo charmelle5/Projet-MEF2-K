@@ -17,7 +17,7 @@ srand(time(NULL));
    
  Animal* chenil = NULL;
  int taille = 0;
- int choix=0;
+ int choix = 0;
  
   // Charger les animaux existants
   charger_chenil(&chenil, &taille);
