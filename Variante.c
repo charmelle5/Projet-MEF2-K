@@ -123,8 +123,8 @@ void afficher_statistiques_especes(Animal* chenil, int taille) {
 
     // Afficher les résultats
     printf("\n=== STATISTIQUES DU CHENIL ===\n");
-    printf("Nombre total d'animaux: %d\n\n", taille);
-    printf("Répartition par espèce (ordre décroissant):\n");
+    printf("Nombre total d'animaux : %d\n\n", taille);
+    printf("Répartition par espèce :\n");
     
     for (int i = 0; i < 6; i++) {
         if (compteurs[i] > 0) {
