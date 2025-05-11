@@ -8,6 +8,8 @@
 
 
 int main() {
+
+srand(time(NULL));
    
  Animal* chenil = NULL;
  int taille = 0;
@@ -22,7 +24,8 @@ int main() {
     printf("2. Ajouter un animal\n");
     printf("3. Adopter un animal\n");
     printf("4. Calculer le temps de nettoyage\n");
-    printf("5. Quitter\n");
+    printf("5. Afficher l'inventaire du chenil\n");
+    printf("6. Quitter\n");
     printf("Votre choix : ");
     if (scanf("%d", &choix) != 1) {
             printf("Saisie invalide. Veuillez entrer un nombre.\n");
@@ -44,12 +47,15 @@ int main() {
               affiche_temps_nettoyage(chenil, taille);
               break;
           case 5:
+               afficher_statistiques_especes(chenil, taille);
+               break;
+          case 6:
             printf("Au revoir !\n");
                break;
           default:
               printf("Choix invalide. Veuillez réessayer.\n");
     }
-  } while(choix != 5);
+  } while(choix != 6);
 
   // Sauvegarder avant de quitter //
   sauvegarder_chenil(chenil, taille);
