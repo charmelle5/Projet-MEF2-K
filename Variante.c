@@ -80,7 +80,7 @@ void affiche_temps_nettoyage(Animal* chenil, int taille) {
 
 
 
-void afficher_statistiques_especes(Animal* chenil, int taille) {
+void afficher_inventaire_chenil(Animal* chenil, int taille) {
     
     if (chenil == NULL || taille <= 0) {
         printf("Aucun animal dans le chenil.\n");
@@ -122,7 +122,7 @@ void afficher_statistiques_especes(Animal* chenil, int taille) {
 
 
     // Afficher les résultats
-    printf("\n=== STATISTIQUES DU CHENIL ===\n");
+    printf("\n=== INVENTAIRE DU CHENIL ===\n");
     printf("Nombre total d'animaux : %d\n\n", taille);
     printf("Répartition par espèce :\n");
 
