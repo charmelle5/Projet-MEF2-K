@@ -200,10 +200,10 @@ void rechercher_animal(Animal* chenil, int taille) {
 		case 3:
 			
 			int age = annee_actuelle - a.annee;
-            		if (type_age == 1 && age < 2) {
+            		if (type_age == 1 && age <= 2) {
                 	   match = 1;  // Jeune
             		} 
-            		else if (type_age == 2 && age > 10) {
+            		else if (type_age == 2 && age >= 10) {
                 	   match = 1;  // Senior
             		}
 			
