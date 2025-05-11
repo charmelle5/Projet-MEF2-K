@@ -1,4 +1,5 @@
-#include"Creation_chenil.h"
+#include "Creation_chenil.h"
+
 // Déclaration des variables statiques pour la gestion des numéros
 static int numeros_utilises[MAX_ANIMAUX]; 
 static int nb_numeros = 0;
@@ -40,7 +41,8 @@ Animal creation_animal(){
      // Ajoute le nouveau numéro dans le tableau de num d'id
     numeros_utilises[nb_numeros++] = a.num;
 
-  do {
+
+    do {
         printf("Saisir le nom de l'animal : ");
         if (fgets(a.nom, MAXCHAR, stdin) == NULL) {
             printf("Erreur de saisie.\n");
