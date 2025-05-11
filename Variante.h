@@ -9,7 +9,6 @@
         } TempsNettoyage;
 
     //Protocoles pour les variantes
-    TempsNettoyage temps_nettoyage();
     TempsNettoyage temps_nettoyage(Type espece);
     void affiche_temps_nettoyage(Animal* chenil, int taille);
     void afficher_inventaire_chenil(Animal* chenil, int taille);
